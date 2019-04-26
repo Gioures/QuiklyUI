@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "UIView+Quick.h"
+#import "UIButton+Quick.h"
 
 @interface ViewController ()
 
@@ -17,15 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    __weak typeof(self) weakself = self;
-    UIView.View().fram(0,0,500,500).bg(UIColor.redColor).addOn(self.view).tap(^(UIView * v){
-        v.bg(UIColor.orangeColor);
-        weakself.view.bg(UIColor.blueColor);
-    });
     
     
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
+    UIButton * b = (UIButton *)UIButton.Button().fram(0,0,100,100).addOn(self.view);
+    b.titleRect = CGRectMake(0, 0, 100, 20);
+    b.str(@"basdbfbs").bg(UIColor.redColor);
+    b.img(@"1");
+    b.imgRect = CGRectMake(0, 80, 100, 20);
+    
+    
+}   
 
 @end

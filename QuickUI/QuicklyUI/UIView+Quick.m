@@ -45,6 +45,13 @@
     };
 }
 
+-(UIView * _Nonnull (^)(BOOL))hid{
+    return ^(BOOL hid){
+        self.hidden = hid;
+        return self;
+    };
+}
+
 -(UIView * _Nonnull (^)(float, float))cent{
     return ^(float x, float y){
         [self setCenter:CGPointMake(x, y)];
@@ -99,9 +106,37 @@
     };
 }
 
+-(UIView * _Nonnull (^)(float))corner{
+    return ^(float z){
+        self.layer.cornerRadius = z;
+        self.clipsToBounds = YES;
+        return self;
+    };
+}
+
+-(UIView * _Nonnull (^)(float))borderW{
+    return ^(float z){
+        self.layer.borderWidth = z;
+        return self;
+    };
+}
+
+-(UIView * _Nonnull (^)(UIColor * _Nonnull))borderC{
+    return ^(UIColor *z){
+        self.layer.borderColor = z.CGColor;
+        return self;
+    };
+}
+
 -(void)tapG:(UITapGestureRecognizer *)t{
     self.tapBlock(t.view);
 }
 
+-(UIView * _Nonnull (^)(int))tags{
+    return ^(int i){
+        [self setTag:i];
+        return self;
+    };
+}
 
 @end

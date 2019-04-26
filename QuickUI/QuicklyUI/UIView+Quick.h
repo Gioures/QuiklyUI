@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (Quick)
+
 @property (nonatomic, copy) void(^tapBlock)(UIView * v);
 
 +(UIView * (^)(void))View;
@@ -18,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(UIView * (^)(float x , float y , float w, float h))fram;
 
 -(UIView * (^)(BOOL enable))able;
+
+-(UIView * (^)(BOOL hid))hid;
 
 -(UIView * (^)(float x,float y))cent;
 
@@ -30,6 +33,14 @@ NS_ASSUME_NONNULL_BEGIN
 -(UIView *(^)(UIView * v))addOn;
 
 -(UIView *(^)(UIColor * c))bg;
+
+-(UIView * (^)(float w))corner;
+
+-(UIView * (^)(float w))borderW;
+
+-(UIView * (^)(UIColor* w))borderC;
+
+-(UIView * (^)(int w))tags;
 
 @end
 

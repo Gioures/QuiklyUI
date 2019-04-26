@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B77652C399716257C4FC4D9 /* libPods-QuickUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAA8AD3241C0B330E5EEC3EF /* libPods-QuickUI.a */; };
+		6EEA6DDC2273818C00D93357 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA6DDB2273818C00D93357 /* TestViewController.m */; };
+		6EEE2EBF2272255200FFF188 /* UIImageView+Quick.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE2EBE2272255200FFF188 /* UIImageView+Quick.m */; };
 		F749E16A2271E87200A5766E /* UIButton+Quick.m in Sources */ = {isa = PBXBuildFile; fileRef = F749E1692271E87200A5766E /* UIButton+Quick.m */; };
 		F76764462271A92800CA5FB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F76764452271A92800CA5FB7 /* AppDelegate.m */; };
 		F76764492271A92800CA5FB7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76764482271A92800CA5FB7 /* ViewController.m */; };
@@ -19,6 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		514331585AB8B56AA59E09C2 /* Pods-QuickUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickUI/Pods-QuickUI.release.xcconfig"; sourceTree = "<group>"; };
+		6EEA6DD92273714200D93357 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		6EEA6DDA2273818C00D93357 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		6EEA6DDB2273818C00D93357 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		6EEE2EBD2272255200FFF188 /* UIImageView+Quick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Quick.h"; sourceTree = "<group>"; };
+		6EEE2EBE2272255200FFF188 /* UIImageView+Quick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Quick.m"; sourceTree = "<group>"; };
+		861B31E429ADCFCAF0F72751 /* Pods-QuickUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickUI/Pods-QuickUI.debug.xcconfig"; sourceTree = "<group>"; };
+		CAA8AD3241C0B330E5EEC3EF /* libPods-QuickUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuickUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F749E1682271E87200A5766E /* UIButton+Quick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Quick.h"; sourceTree = "<group>"; };
 		F749E1692271E87200A5766E /* UIButton+Quick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Quick.m"; sourceTree = "<group>"; };
 		F76764412271A92800CA5FB7 /* QuickUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,18 +53,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B77652C399716257C4FC4D9 /* libPods-QuickUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		219683CDA39BB4279614B38C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				861B31E429ADCFCAF0F72751 /* Pods-QuickUI.debug.xcconfig */,
+				514331585AB8B56AA59E09C2 /* Pods-QuickUI.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3F3AACE0AF6D7964485466A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAA8AD3241C0B330E5EEC3EF /* libPods-QuickUI.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F76764382271A92800CA5FB7 = {
 			isa = PBXGroup;
 			children = (
 				F767645A2271A93600CA5FB7 /* QuicklyUI */,
 				F76764432271A92800CA5FB7 /* QuickUI */,
 				F76764422271A92800CA5FB7 /* Products */,
+				219683CDA39BB4279614B38C /* Pods */,
+				3F3AACE0AF6D7964485466A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,10 +104,13 @@
 				F76764472271A92800CA5FB7 /* ViewController.h */,
 				F76764482271A92800CA5FB7 /* ViewController.m */,
 				F767644A2271A92800CA5FB7 /* Main.storyboard */,
+				6EEA6DD92273714200D93357 /* 1.png */,
 				F767644D2271A92A00CA5FB7 /* Assets.xcassets */,
 				F767644F2271A92A00CA5FB7 /* LaunchScreen.storyboard */,
 				F76764522271A92A00CA5FB7 /* Info.plist */,
 				F76764532271A92A00CA5FB7 /* main.m */,
+				6EEA6DDA2273818C00D93357 /* TestViewController.h */,
+				6EEA6DDB2273818C00D93357 /* TestViewController.m */,
 			);
 			path = QuickUI;
 			sourceTree = "<group>";
@@ -90,6 +124,8 @@
 				F76764622271BBEC00CA5FB7 /* UILabel+Quick.m */,
 				F749E1682271E87200A5766E /* UIButton+Quick.h */,
 				F749E1692271E87200A5766E /* UIButton+Quick.m */,
+				6EEE2EBD2272255200FFF188 /* UIImageView+Quick.h */,
+				6EEE2EBE2272255200FFF188 /* UIImageView+Quick.m */,
 			);
 			path = QuicklyUI;
 			sourceTree = "<group>";
@@ -101,6 +137,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F76764572271A92A00CA5FB7 /* Build configuration list for PBXNativeTarget "QuickUI" */;
 			buildPhases = (
+				E531989C18C7EBB4FC57718F /* [CP] Check Pods Manifest.lock */,
 				F767643D2271A92800CA5FB7 /* Sources */,
 				F767643E2271A92800CA5FB7 /* Frameworks */,
 				F767643F2271A92800CA5FB7 /* Resources */,
@@ -159,6 +196,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E531989C18C7EBB4FC57718F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F767643D2271A92800CA5FB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -169,6 +227,8 @@
 				F76764632271BBEC00CA5FB7 /* UILabel+Quick.m in Sources */,
 				F767645D2271A97500CA5FB7 /* UIView+Quick.m in Sources */,
 				F76764462271A92800CA5FB7 /* AppDelegate.m in Sources */,
+				6EEE2EBF2272255200FFF188 /* UIImageView+Quick.m in Sources */,
+				6EEA6DDC2273818C00D93357 /* TestViewController.m in Sources */,
 				F749E16A2271E87200A5766E /* UIButton+Quick.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,10 +369,11 @@
 		};
 		F76764582271A92A00CA5FB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 861B31E429ADCFCAF0F72751 /* Pods-QuickUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5X39TW69X8;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = QuickUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -320,16 +381,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Gioures.QuickUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/";
 			};
 			name = Debug;
 		};
 		F76764592271A92A00CA5FB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 514331585AB8B56AA59E09C2 /* Pods-QuickUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5X39TW69X8;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = QuickUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -337,7 +401,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Gioures.QuickUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/";
 			};
 			name = Release;
 		};
