@@ -2,7 +2,7 @@
 //  UILabel+Quick.m
 //  QuickUI
 //
-//  Created by ytkjs on 2019/4/25.
+//  Created by 段庆烨 on 2019/4/25.
 //  Copyright © 2019年 Gioures. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 
 +(UILabel * _Nonnull (^)(void))Label{
     return ^{
-        return [UILabel new];
+        return [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     };
 }
 

@@ -2,7 +2,7 @@
 //  UIButton+Quick.h
 //  QuickUI
 //
-//  Created by ytkjs on 2019/4/25.
+//  Created by 段庆烨 on 2019/4/25.
 //  Copyright © 2019年 Gioures. All rights reserved.
 //
 
@@ -41,7 +41,38 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(UIButton* (^)(BOOL a))adjust;
 
-#pragma warning 写成继承最好
+
+#pragma mark UIView公开方法 只写方法 不需做实现
++(UIButton * (^)(void))loadFromNib;
+
+-(UIButton * (^)(float x , float y , float w, float h))fram;
+
+-(UIButton * (^)(BOOL enable))able;
+
+-(UIButton * (^)(BOOL hid))hid;
+
+-(UIButton * (^)(float x,float y))cent;
+
+-(UIButton * (^)(float w, float h))bds;
+
+-(UIButton * (^)(BOOL clip))clip;
+
+-(UIButton * (^)(UIView * v))addOn;
+
+-(UIButton * (^)(UIColor * c))bg;
+
+-(UIButton * (^)(float w))corner;
+
+-(UIButton * (^)(float w))borderW;
+
+-(UIButton * (^)(UIColor * w))borderC;
+
+-(UIButton * (^)(int w))tags;
+
+-(UIButton * (^)(void))layout;
+
+
+#pragma mark 随意设置文字和图片位置，本想用runtime写在这里 但是有BUG 以后写成继承吧
 /*
 -(UIButton* (^)(float t,float l,float b, float r))titleInset;
 
@@ -51,11 +82,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
--(UIButton* (^)(BOOL a))select;
+-(UIButton * (^)(BOOL a))select;
 
--(UIButton* (^)(id tager , SEL s))action;
+-(UIButton * (^)(id tager , SEL s))action;
 
--(UIButton* (^)(void (^action)(UIButton * v)))click;
+-(UIButton * (^)(void (^action)(UIButton * v)))click;
 
 
 

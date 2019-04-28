@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		028684BA40FD20CF412FD716 /* Pods_QuickUIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC96DA86AE55B1BFA7A1AB /* Pods_QuickUIDemo.framework */; };
 		6EC0490222749A4900CBD4C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0490122749A4900CBD4C1 /* AppDelegate.m */; };
 		6EC0490522749A4900CBD4C1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0490422749A4900CBD4C1 /* ViewController.m */; };
 		6EC0490822749A4900CBD4C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EC0490622749A4900CBD4C1 /* Main.storyboard */; };
@@ -18,9 +19,14 @@
 		6EC0492422749A5C00CBD4C1 /* UITableView+Quick.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0491B22749A5C00CBD4C1 /* UITableView+Quick.m */; };
 		6EC0492522749A5C00CBD4C1 /* UIImageView+Quick.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0491C22749A5C00CBD4C1 /* UIImageView+Quick.m */; };
 		6EC0492622749A5C00CBD4C1 /* UIButton+Quick.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0491E22749A5C00CBD4C1 /* UIButton+Quick.m */; };
+		6EC0493622749EE400CBD4C1 /* UICollectionView+Quick.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0493522749EE400CBD4C1 /* UICollectionView+Quick.m */; };
+		6EC0493C2274B0E500CBD4C1 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0493B2274B0E500CBD4C1 /* AViewController.m */; };
+		6EC0493D2274B3CD00CBD4C1 /* UIView+Masonry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC049382274AD5500CBD4C1 /* UIView+Masonry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45DC96DA86AE55B1BFA7A1AB /* Pods_QuickUIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickUIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD3061D190EB125B176EE14 /* Pods-QuickUIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickUIDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickUIDemo/Pods-QuickUIDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6EC048FD22749A4900CBD4C1 /* QuickUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EC0490022749A4900CBD4C1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6EC0490122749A4900CBD4C1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,6 +48,13 @@
 		6EC0491F22749A5C00CBD4C1 /* UIView+Quick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Quick.h"; sourceTree = "<group>"; };
 		6EC0492022749A5C00CBD4C1 /* UIImageView+Quick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Quick.h"; sourceTree = "<group>"; };
 		6EC0492122749A5C00CBD4C1 /* UITableView+Quick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Quick.h"; sourceTree = "<group>"; };
+		6EC0493422749EE400CBD4C1 /* UICollectionView+Quick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Quick.h"; sourceTree = "<group>"; };
+		6EC0493522749EE400CBD4C1 /* UICollectionView+Quick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Quick.m"; sourceTree = "<group>"; };
+		6EC049372274AD5500CBD4C1 /* UIView+Masonry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Masonry.h"; sourceTree = "<group>"; };
+		6EC049382274AD5500CBD4C1 /* UIView+Masonry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Masonry.m"; sourceTree = "<group>"; };
+		6EC0493A2274B0E500CBD4C1 /* AViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AViewController.h; sourceTree = "<group>"; };
+		6EC0493B2274B0E500CBD4C1 /* AViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AViewController.m; sourceTree = "<group>"; };
+		F51719B78127AC06C7A2DEB2 /* Pods-QuickUIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickUIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickUIDemo/Pods-QuickUIDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,18 +62,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				028684BA40FD20CF412FD716 /* Pods_QuickUIDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C5BD598FED9CF739BA081B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4CD3061D190EB125B176EE14 /* Pods-QuickUIDemo.debug.xcconfig */,
+				F51719B78127AC06C7A2DEB2 /* Pods-QuickUIDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		61CBEE991895EFEDA0DAFE18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45DC96DA86AE55B1BFA7A1AB /* Pods_QuickUIDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6EC048F422749A4900CBD4C1 = {
 			isa = PBXGroup;
 			children = (
 				6EC0491622749A5C00CBD4C1 /* QuicklyUI */,
 				6EC048FF22749A4900CBD4C1 /* QuickUIDemo */,
 				6EC048FE22749A4900CBD4C1 /* Products */,
+				0C5BD598FED9CF739BA081B4 /* Pods */,
+				61CBEE991895EFEDA0DAFE18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +117,8 @@
 				6EC0490B22749A4B00CBD4C1 /* LaunchScreen.storyboard */,
 				6EC0490E22749A4B00CBD4C1 /* Info.plist */,
 				6EC0490F22749A4B00CBD4C1 /* main.m */,
+				6EC0493A2274B0E500CBD4C1 /* AViewController.h */,
+				6EC0493B2274B0E500CBD4C1 /* AViewController.m */,
 			);
 			path = QuickUIDemo;
 			sourceTree = "<group>";
@@ -91,17 +126,21 @@
 		6EC0491622749A5C00CBD4C1 /* QuicklyUI */ = {
 			isa = PBXGroup;
 			children = (
-				6EC0491722749A5C00CBD4C1 /* UILabel+Quick.m */,
-				6EC0491822749A5C00CBD4C1 /* UIButton+Quick.h */,
 				6EC0491922749A5C00CBD4C1 /* Quick.h */,
+				6EC0491F22749A5C00CBD4C1 /* UIView+Quick.h */,
 				6EC0491A22749A5C00CBD4C1 /* UIView+Quick.m */,
-				6EC0491B22749A5C00CBD4C1 /* UITableView+Quick.m */,
+				6EC0491822749A5C00CBD4C1 /* UIButton+Quick.h */,
+				6EC0491E22749A5C00CBD4C1 /* UIButton+Quick.m */,
+				6EC0492022749A5C00CBD4C1 /* UIImageView+Quick.h */,
 				6EC0491C22749A5C00CBD4C1 /* UIImageView+Quick.m */,
 				6EC0491D22749A5C00CBD4C1 /* UILabel+Quick.h */,
-				6EC0491E22749A5C00CBD4C1 /* UIButton+Quick.m */,
-				6EC0491F22749A5C00CBD4C1 /* UIView+Quick.h */,
-				6EC0492022749A5C00CBD4C1 /* UIImageView+Quick.h */,
+				6EC0491722749A5C00CBD4C1 /* UILabel+Quick.m */,
 				6EC0492122749A5C00CBD4C1 /* UITableView+Quick.h */,
+				6EC0491B22749A5C00CBD4C1 /* UITableView+Quick.m */,
+				6EC0493422749EE400CBD4C1 /* UICollectionView+Quick.h */,
+				6EC0493522749EE400CBD4C1 /* UICollectionView+Quick.m */,
+				6EC049372274AD5500CBD4C1 /* UIView+Masonry.h */,
+				6EC049382274AD5500CBD4C1 /* UIView+Masonry.m */,
 			);
 			path = QuicklyUI;
 			sourceTree = "<group>";
@@ -113,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6EC0491322749A4B00CBD4C1 /* Build configuration list for PBXNativeTarget "QuickUIDemo" */;
 			buildPhases = (
+				89201CDD076DAD2FFF63E77C /* [CP] Check Pods Manifest.lock */,
 				6EC048F922749A4900CBD4C1 /* Sources */,
 				6EC048FA22749A4900CBD4C1 /* Frameworks */,
 				6EC048FB22749A4900CBD4C1 /* Resources */,
+				88F2F1BF76A5B993D25A84FA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,6 +212,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		88F2F1BF76A5B993D25A84FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QuickUIDemo/Pods-QuickUIDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickUIDemo/Pods-QuickUIDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89201CDD076DAD2FFF63E77C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickUIDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6EC048F922749A4900CBD4C1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -178,10 +258,13 @@
 			files = (
 				6EC0492222749A5C00CBD4C1 /* UILabel+Quick.m in Sources */,
 				6EC0490522749A4900CBD4C1 /* ViewController.m in Sources */,
+				6EC0493C2274B0E500CBD4C1 /* AViewController.m in Sources */,
 				6EC0491022749A4B00CBD4C1 /* main.m in Sources */,
+				6EC0493622749EE400CBD4C1 /* UICollectionView+Quick.m in Sources */,
 				6EC0492422749A5C00CBD4C1 /* UITableView+Quick.m in Sources */,
 				6EC0492322749A5C00CBD4C1 /* UIView+Quick.m in Sources */,
 				6EC0492622749A5C00CBD4C1 /* UIButton+Quick.m in Sources */,
+				6EC0493D2274B3CD00CBD4C1 /* UIView+Masonry.m in Sources */,
 				6EC0492522749A5C00CBD4C1 /* UIImageView+Quick.m in Sources */,
 				6EC0490222749A4900CBD4C1 /* AppDelegate.m in Sources */,
 			);
@@ -323,6 +406,7 @@
 		};
 		6EC0491422749A4B00CBD4C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CD3061D190EB125B176EE14 /* Pods-QuickUIDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -340,6 +424,7 @@
 		};
 		6EC0491522749A4B00CBD4C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F51719B78127AC06C7A2DEB2 /* Pods-QuickUIDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

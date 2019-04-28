@@ -13,4 +13,6 @@
 #import "UILabel+Quick.h"
 #import "UIView+Quick.h"
 #import "UITableView+Quick.h"
+#import "UICollectionView+Quick.h"
+#import "UIView+Masonry.h"
 #endif /* Quick_h */

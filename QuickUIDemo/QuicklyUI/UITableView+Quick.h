@@ -40,6 +40,10 @@
 
 -(UITableView*(^)(void))endReload;
 
+-(UITableView*(^)(BOOL fromNib,Class cellClass,NSString* identifier))registCell;
+
+-(UITableView*(^)(BOOL fromNib,Class cellClass,NSString* identifier))registHead;
+
 
 /**
  设置section个数
@@ -133,7 +137,34 @@
 -(UITableView*(^)(NSString*(^)(NSIndexPath*)))setEditTextForIndex;
 
 
+#pragma mark UIView公共方法 不需要实现
++(UITableView * (^)(void))loadFromNib;
 
+-(UITableView * (^)(float x , float y , float w, float h))fram;
+
+-(UITableView * (^)(BOOL enable))able;
+
+-(UITableView * (^)(BOOL hid))hid;
+
+-(UITableView * (^)(float x,float y))cent;
+
+-(UITableView * (^)(float w, float h))bds;
+
+-(UITableView * (^)(BOOL clip))clip;
+
+-(UITableView *(^)(UIView * v))addOn;
+
+-(UITableView *(^)(UIColor * c))bg;
+
+-(UITableView * (^)(float w))corner;
+
+-(UITableView * (^)(float w))borderW;
+
+-(UITableView * (^)(UIColor * w))borderC;
+
+-(UITableView * (^)(int w))tags;
+
+-(UITableView * (^)(void))layout;
 @end
 
 

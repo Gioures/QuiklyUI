@@ -2,7 +2,7 @@
 //  UIView+Quick.m
 //  QuickUI
 //
-//  Created by ytkjs on 2019/4/25.
+//  Created by 段庆烨 on 2019/4/25.
 //  Copyright © 2019年 Gioures. All rights reserved.
 //
 
@@ -24,6 +24,12 @@
 
 -(void (^)(UIView * _Nonnull))tapBlock{
     return objc_getAssociatedObject(self, @selector(tapBlock));
+}
+
++(UIView * _Nonnull (^)(void))loadFromNib{
+    return ^{
+        return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
+    };
 }
 
 +(UIView * _Nonnull (^)(void))View{
@@ -103,6 +109,7 @@
 
 -(UIView * _Nonnull (^)(UIColor * _Nonnull))bg{
     return ^(UIColor * c){
+        
         [self setBackgroundColor:c];
         return self;
     };
@@ -147,5 +154,7 @@
         return self;
     };
 }
+
+
 
 @end

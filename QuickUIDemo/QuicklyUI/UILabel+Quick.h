@@ -2,7 +2,7 @@
 //  UILabel+Quick.h
 //  QuickUI
 //
-//  Created by ytkjs on 2019/4/25.
+//  Created by 段庆烨 on 2019/4/25.
 //  Copyright © 2019年 Gioures. All rights reserved.
 //
 
@@ -27,6 +27,35 @@ NS_ASSUME_NONNULL_BEGIN
 -(UILabel* (^)(BOOL a))adjust;
 
 -(UILabel* (^)(NSAttributedString *a))attr;
+
+#pragma mark UIView公共方法 不需要实现
++(UILabel * (^)(void))loadFromNib;
+
+-(UILabel * (^)(float x , float y , float w, float h))fram;
+
+-(UILabel * (^)(BOOL enable))able;
+
+-(UILabel * (^)(BOOL hid))hid;
+
+-(UILabel * (^)(float x,float y))cent;
+
+-(UILabel * (^)(float w, float h))bds;
+
+-(UILabel * (^)(BOOL clip))clip;
+
+-(UILabel *(^)(UIView * v))addOn;
+
+-(UILabel *(^)(UIColor * c))bg;
+
+-(UILabel * (^)(float w))corner;
+
+-(UILabel * (^)(float w))borderW;
+
+-(UILabel * (^)(UIColor * w))borderC;
+
+-(UILabel * (^)(int w))tags;
+
+-(UILabel * (^)(void))layout;
 
 @end
 

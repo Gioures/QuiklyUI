@@ -174,6 +174,30 @@
     };
 }
 
+
+-(UITableView *(^)(BOOL, __unsafe_unretained Class, NSString *))registCell{
+    return ^(BOOL fromNib,Class cellClass,NSString* identifier){
+        if (fromNib) {
+            [self registerNib:[UINib nibWithNibName:NSStringFromClass(cellClass) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:identifier];
+        }else{
+            [self registerClass:cellClass forCellReuseIdentifier:identifier];
+        }
+        return self;
+    };
+}
+
+-(UITableView *(^)(BOOL, __unsafe_unretained Class, NSString *))registHead{
+    return ^(BOOL fromNib,Class cellClass,NSString* identifier){
+        if (fromNib) {
+            [self registerNib:[UINib nibWithNibName:NSStringFromClass(cellClass) bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:identifier];
+        }else{
+            [self registerClass:cellClass forHeaderFooterViewReuseIdentifier:identifier];
+        }
+        return self;
+    };
+}
+
+
 -(UITableView *(^)(NSInteger))setNumOfSection{
     __weak typeof(self) wk = self;
     return ^(NSInteger i){

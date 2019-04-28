@@ -2,7 +2,7 @@
 //  UIButton+Quick.m
 //  QuickUI
 //
-//  Created by ytkjs on 2019/4/25.
+//  Created by 段庆烨 on 2019/4/25.
 //  Copyright © 2019年 Gioures. All rights reserved.
 //
 
@@ -195,4 +195,5 @@
 -(void)dealloc{
     NSLog(@"button 释放");
 }
+
 @end

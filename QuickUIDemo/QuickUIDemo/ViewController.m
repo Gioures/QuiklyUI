@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import "Quick.h"
+#import "AViewController.h"
 @interface ViewController ()
 
 @end
@@ -16,7 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    UIButton.Button().bg(UIColor.blueColor).click(^(UIButton * button){
+        [self presentViewController:[AViewController new] animated:YES completion:nil];
+    }).addOn(self.view).makeCons(^(MASConstraintMaker * make){
+        make.size.equalTo([NSValue valueWithCGSize:CGSizeMake(100, 100)]);
+        make.center.equalTo(self.view);
+    });
+    
+
 }
 
 

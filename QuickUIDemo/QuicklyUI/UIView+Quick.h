@@ -2,7 +2,7 @@
 //  UIView+Quick.h
 //  QuickUI
 //
-//  Created by ytkjs on 2019/4/25.
+//  Created by 段庆烨 on 2019/4/25.
 //  Copyright © 2019年 Gioures. All rights reserved.
 //
 
@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIView (Quick)
 
 @property (nonatomic, copy) void(^tapBlock)(UIView * v);
+
++(UIView * (^)(void))loadFromNib;
 
 +(UIView * (^)(void))View;
 
@@ -30,8 +32,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(UIView * (^)(BOOL clip))clip;
 
--(UIView * (^)(void (^action)(UIView * v)))tap;
-
 -(UIView *(^)(UIView * v))addOn;
 
 -(UIView *(^)(UIColor * c))bg;
@@ -45,6 +45,12 @@ NS_ASSUME_NONNULL_BEGIN
 -(UIView * (^)(int w))tags;
 
 -(UIView * (^)(void))layout;
+
+-(UIView * (^)(void (^action)(UIView * v)))tap;
+
+/*
+ 
+ */
 
 @end
 
