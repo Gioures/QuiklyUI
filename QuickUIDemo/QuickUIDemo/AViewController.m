@@ -8,8 +8,9 @@
 
 #import "AViewController.h"
 #import "Quick.h"
+#import "ZCollectionViewCell.h"
 @interface AViewController ()
-
+@property (nonatomic , strong)UICollectionView * c ;
 @end
 
 @implementation AViewController
@@ -26,14 +27,16 @@
         [wk dismissViewControllerAnimated:YES completion:nil];
     });
     
-    
-    UILabel.Label().str(@"我是第二个label").borderC(UIColor.orangeColor).borderW(1).corner(10).fram(100,100,20,20).addOn(self.view);
-    
-    CollectionView(CGRectMake(0, 120, self.view.bounds.size.width, self.view.bounds.size.height), Layout.itemSizeA(50,50)).delegateA.cellP(^UICollectionViewCell * _Nonnull(NSIndexPath * _Nonnull index) {
-        UICollectionViewCell * cell = [UICollectionViewCell new];
-        cell.bg(UIColor.greenColor);
+    _c = CollectionView(CGRectMake(0, 100,370,667), Layout.itemSizeA(100,100)).regist(YES, ZCollectionViewCell.class).numberOfSectionsInCollectionView(^NSInteger{
+        return 1;
+    }).numberOfItemsInSection(^NSInteger(NSInteger section) {
+        return 20;
+    }).cellForItemAtIndexPath(^UICollectionViewCell * _Nonnull(NSIndexPath * _Nonnull index) {
+        ZCollectionViewCell * cell = [wk.c dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ZCollectionViewCell class]) forIndexPath:index];
         return cell;
-    }) .addOn(self.view);
+    }).addOn(self.view).delegateA;
+    
+
 }
 
 -(void)dealloc{

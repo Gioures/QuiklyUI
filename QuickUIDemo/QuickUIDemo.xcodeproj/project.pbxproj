@@ -22,6 +22,8 @@
 		6EC0493622749EE400CBD4C1 /* UICollectionView+Quick.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0493522749EE400CBD4C1 /* UICollectionView+Quick.m */; };
 		6EC0493C2274B0E500CBD4C1 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0493B2274B0E500CBD4C1 /* AViewController.m */; };
 		6EC0493D2274B3CD00CBD4C1 /* UIView+Masonry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC049382274AD5500CBD4C1 /* UIView+Masonry.m */; };
+		6EF94BF222760E29007FD735 /* ZCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF94BF022760E29007FD735 /* ZCollectionViewCell.m */; };
+		6EF94BF322760E29007FD735 /* ZCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EF94BF122760E29007FD735 /* ZCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,9 @@
 		6EC049382274AD5500CBD4C1 /* UIView+Masonry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Masonry.m"; sourceTree = "<group>"; };
 		6EC0493A2274B0E500CBD4C1 /* AViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AViewController.h; sourceTree = "<group>"; };
 		6EC0493B2274B0E500CBD4C1 /* AViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AViewController.m; sourceTree = "<group>"; };
+		6EF94BEF22760E29007FD735 /* ZCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCollectionViewCell.h; sourceTree = "<group>"; };
+		6EF94BF022760E29007FD735 /* ZCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCollectionViewCell.m; sourceTree = "<group>"; };
+		6EF94BF122760E29007FD735 /* ZCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZCollectionViewCell.xib; sourceTree = "<group>"; };
 		F51719B78127AC06C7A2DEB2 /* Pods-QuickUIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickUIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickUIDemo/Pods-QuickUIDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,13 +117,16 @@
 				6EC0490122749A4900CBD4C1 /* AppDelegate.m */,
 				6EC0490322749A4900CBD4C1 /* ViewController.h */,
 				6EC0490422749A4900CBD4C1 /* ViewController.m */,
+				6EC0493A2274B0E500CBD4C1 /* AViewController.h */,
+				6EC0493B2274B0E500CBD4C1 /* AViewController.m */,
 				6EC0490622749A4900CBD4C1 /* Main.storyboard */,
 				6EC0490922749A4B00CBD4C1 /* Assets.xcassets */,
 				6EC0490B22749A4B00CBD4C1 /* LaunchScreen.storyboard */,
 				6EC0490E22749A4B00CBD4C1 /* Info.plist */,
 				6EC0490F22749A4B00CBD4C1 /* main.m */,
-				6EC0493A2274B0E500CBD4C1 /* AViewController.h */,
-				6EC0493B2274B0E500CBD4C1 /* AViewController.m */,
+				6EF94BEF22760E29007FD735 /* ZCollectionViewCell.h */,
+				6EF94BF022760E29007FD735 /* ZCollectionViewCell.m */,
+				6EF94BF122760E29007FD735 /* ZCollectionViewCell.xib */,
 			);
 			path = QuickUIDemo;
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EC0490D22749A4B00CBD4C1 /* LaunchScreen.storyboard in Resources */,
+				6EF94BF322760E29007FD735 /* ZCollectionViewCell.xib in Resources */,
 				6EC0490A22749A4B00CBD4C1 /* Assets.xcassets in Resources */,
 				6EC0490822749A4900CBD4C1 /* Main.storyboard in Resources */,
 			);
@@ -257,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EC0492222749A5C00CBD4C1 /* UILabel+Quick.m in Sources */,
+				6EF94BF222760E29007FD735 /* ZCollectionViewCell.m in Sources */,
 				6EC0490522749A4900CBD4C1 /* ViewController.m in Sources */,
 				6EC0493C2274B0E500CBD4C1 /* AViewController.m in Sources */,
 				6EC0491022749A4B00CBD4C1 /* main.m in Sources */,

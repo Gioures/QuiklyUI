@@ -73,11 +73,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #pragma mark 随意设置文字和图片位置，本想用runtime写在这里 但是有BUG 以后写成继承吧
-/*
+
 -(UIButton* (^)(float t,float l,float b, float r))titleInset;
 
 -(UIButton* (^)(float t,float l,float b, float r))imgInset;
-*/
+
 
 
 

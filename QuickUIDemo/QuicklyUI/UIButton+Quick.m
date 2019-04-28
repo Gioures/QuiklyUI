@@ -11,7 +11,7 @@
 @implementation UIButton (Quick)
 @dynamic titleRect;
 @dynamic imgRect;
-/*  设置随意改变文字和图片位置， 建议写成继承
+//  设置随意改变文字和图片位置， 建议写成继承
 +(void)load{
     Method img1 = class_getInstanceMethod([UIButton class], @selector(imgRectForContentRect:));
     Method img2 = class_getInstanceMethod([UIButton class], @selector(imageRectForContentRect:));
@@ -26,7 +26,7 @@
 
 -(CGRect)imgRectForContentRect:(CGRect)contentRect{
     if (CGRectEqualToRect(self.imgRect, CGRectZero) || CGRectIsEmpty(self.imgRect)) {
-        return [self imageRectForContentRect:contentRect];
+        return [self imgRectForContentRect:contentRect];
     }else{
         return self.imgRect;
     }
@@ -34,12 +34,12 @@
 
 -(CGRect)labelRectForContentRect:(CGRect)contentRect{
     if (CGRectEqualToRect(self.titleRect, CGRectZero) || CGRectIsEmpty(self.titleRect)) {
-        return [self titleRectForContentRect:contentRect];
+        return [self labelRectForContentRect:contentRect];
     }else{
         return self.titleRect;
     }
 }
-*/
+
 
 // 设置属性的修饰词必须用强引用类型或者copy类型否则运行会报错 传数字用number修饰， 其他基础类型用NSValue修饰
 -(void)setTitleRect:(CGRect)titleRect{

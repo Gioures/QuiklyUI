@@ -7,26 +7,60 @@
 //
 
 #import <UIKit/UIKit.h>
-#define CollectionView(x,y) UICollectionView.collectionView(x,y)
+#define CollectionView(fram,layout) UICollectionView.collectionView(fram,layout)
 #define Layout [UICollectionViewFlowLayout new]
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NSInteger(^B)(void);
+
 @interface UICollectionView (Quick)
+
+/**
+ 设置代理
+ */
 @property (nonatomic, strong , readonly) UICollectionView * delegateA;
-@property (nonatomic, copy) UICollectionView*(^cellP )( UICollectionViewCell* (^cell)(NSIndexPath *index));
+
+/**
+ cell的代理方法
+ */
+@property (nonatomic, copy) UICollectionView*(^cellForItemAtIndexPath)(UICollectionViewCell* (^cell)(NSIndexPath *index));
+
+@property (nonatomic, copy) UICollectionView*(^numberOfItemsInSection)(NSInteger (^blc)(NSInteger section));
+
+@property (nonatomic, copy) UICollectionView*(^numberOfSectionsInCollectionView)(B blc);
+
+/**
+ 注册Cell isNib：从xib拉取写YES，其他写NO，cellClass：类名
+ */
+@property (nonatomic , copy) UICollectionView*(^regist)(BOOL isNib,Class cellClass);
+
+/**
+ 注册head/foot
+ */
+@property (nonatomic , copy) UICollectionView*(^registHeadView)(BOOL isNib,BOOL ishead,Class cellClass);
 
 
 
 
+
+#pragma mark 方法
+/**
+ 从frame和layout实例化
+ */
 +(UICollectionView * (^)(CGRect frame,UICollectionViewLayout *layout))collectionView;
 
+/**
+ 设置layout
+ */
 -(UICollectionView * (^)(UICollectionViewLayout *))layout;
 
-#pragma mark ------ 代理方法
+#pragma mark ------ 数据代理方法
 -(UICollectionView * (^)(NSInteger (^)(NSInteger)))numberOfItemsInSectionA;
 
 -(UICollectionView * (^)(UICollectionViewCell *(^)(NSIndexPath*)))cellForItemAtIndexPathA;
+
+
 
 #pragma mark UIView公共方法 不需要实现
 +(UICollectionView * (^)(void))loadFromNib;

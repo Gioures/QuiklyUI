@@ -8,7 +8,21 @@
 
 #import "UITableView+Quick.h"
 #import <objc/runtime.h>
-
+@interface UITableView (Quick)<UITableViewDelegate , UITableViewDataSource>
+@property (nonatomic , assign) NSInteger sectionNum;
+@property (nonatomic , assign) NSDictionary<NSNumber*,NSNumber*> *  rowNum;
+@property (nonatomic , copy) UITableViewCell * (^cellBlock)(NSIndexPath*indexPath);
+@property (nonatomic , copy) CGFloat (^cellHeight)(NSIndexPath* indexPath);
+@property (nonatomic , copy) void (^selectBlock)(NSIndexPath* indexPath);
+@property (nonatomic , copy) BOOL (^shouldHightlit)(NSIndexPath* indexPath);
+@property (nonatomic , copy) CGFloat (^heightForHeaderInSectionBlock)(NSInteger section);
+@property (nonatomic , copy) CGFloat (^heightForFooterInSectionBlock)(NSInteger section);
+@property (nonatomic , copy , nullable) UIView* (^viewForHeaderInSectionBlock)(NSInteger section);
+@property (nonatomic , copy) UIView* (^viewForFooterInSectionBlock)(NSInteger section);
+@property (nonatomic , copy , nullable) BOOL (^canEditRowAtIndexPathBlock)(NSIndexPath* indexPath);
+@property (nonatomic , copy) void (^commitEditingForRowAtIndexPathBlock)(UITableViewCellEditingStyle style,NSIndexPath* indexPath);
+@property (nonatomic , copy) NSString* (^EditButtonTitleBlock)(NSIndexPath* indexPath);
+@end
 
 @implementation UITableView (Quick)
 
@@ -121,13 +135,17 @@
 
 #pragma mark 相关方法
 
+-(UITableView *)insetsA:(void (^)(void))inset{
+    
+    return self;
+}
+
 -(UITableView *(^)(UIEdgeInsets))insets{
     __weak typeof(self) wk = self;
     return ^(UIEdgeInsets insets){
         __strong typeof(wk) self = wk;
         self.contentInset = insets;
         return self;
-        
     };
 }
 
