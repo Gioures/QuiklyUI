@@ -19,7 +19,9 @@
     self.view.bg(UIColor.whiteColor);
     __weak typeof(self)wk = self;
     UILabel.Label().str(@"我是一个label").fnt(15).bg(UIColor.redColor).color(UIColor.greenColor).addOn(self.view).makeCons(^(MASConstraintMaker* make){
-        make.edges.equalTo(self.view).inset(10);
+        make.top.left.equalTo(self.view).offset(50);
+        make.right.equalTo(self.view).offset(-50);
+        make.height.equalTo(@40);
     }).tap(^(UIView * v){
         [wk dismissViewControllerAnimated:YES completion:nil];
     });
@@ -27,23 +29,15 @@
     
     UILabel.Label().str(@"我是第二个label").borderC(UIColor.orangeColor).borderW(1).corner(10).fram(100,100,20,20).addOn(self.view);
     
-    
-    
-    
-    // Do any additional setup after loading the view.
+    CollectionView(CGRectMake(0, 120, self.view.bounds.size.width, self.view.bounds.size.height), Layout.itemSizeA(50,50)).delegateA.cellP(^UICollectionViewCell * _Nonnull(NSIndexPath * _Nonnull index) {
+        UICollectionViewCell * cell = [UICollectionViewCell new];
+        cell.bg(UIColor.greenColor);
+        return cell;
+    }) .addOn(self.view);
 }
 
 -(void)dealloc{
     NSLog(@"页面释放");
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

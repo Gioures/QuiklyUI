@@ -414,7 +414,8 @@
 }
 
 -(void)dealloc{
-
+    self.delegate = nil;
+    self.dataSource = nil;
 #if DEBUG
     NSLog(@"TableView 释放");
 #endif
