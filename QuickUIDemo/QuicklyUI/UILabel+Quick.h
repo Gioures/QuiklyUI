@@ -57,6 +57,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(UILabel * (^)(void))layout;
 
+-(UILabel * (^)(void (^action)(UILabel * v)))tap;
+
 @end
 
 NS_ASSUME_NONNULL_END

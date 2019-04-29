@@ -18,15 +18,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.bg(UIColor.whiteColor);
-    __weak typeof(self)wk = self;
-    UILabel.Label().str(@"我是一个label").fnt(15).bg(UIColor.redColor).color(UIColor.greenColor).addOn(self.view).makeCons(^(MASConstraintMaker* make){
-        make.top.left.equalTo(self.view).offset(50);
-        make.right.equalTo(self.view).offset(-50);
-        make.height.equalTo(@40);
-    }).tap(^(UIView * v){
-        [wk dismissViewControllerAnimated:YES completion:nil];
-    });
     
+    [self back];
+    
+ 
+    
+
+}
+
+-(void)back{
+    UILabel.Label().str(@"返回").color(UIColor.greenColor).fnt(15).addOn(self.view).makeCons(^(MASConstraintMaker *make){
+        make.top.left.equalTo(self.view).offset(40);
+        make.size.mas_equalTo(CGSizeMake(40, 20));
+    }).tap(^(UILabel * z){
+        z.bg(UIColor.blackColor);
+    });
+}
+
+-(void)makeUI{
+    __weak __typeof(self)wk = self;
     _c = CollectionView(CGRectMake(0, 100,370,667), Layout.itemSizeA(100,100)).regist(YES, ZCollectionViewCell.class).numberOfSectionsInCollectionView(^NSInteger{
         return 1;
     }).numberOfItemsInSection(^NSInteger(NSInteger section) {
@@ -35,9 +45,9 @@
         ZCollectionViewCell * cell = [wk.c dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ZCollectionViewCell class]) forIndexPath:index];
         return cell;
     }).addOn(self.view).delegateA;
-    
-
 }
+
+
 
 -(void)dealloc{
     NSLog(@"页面释放");

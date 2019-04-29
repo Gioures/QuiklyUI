@@ -66,6 +66,13 @@
 }
 
 
+-(void)dealloc{
+    
+#if DEBUG
+    NSLog(@"label类释放");
+#endif
+    
+}
 
 
 @end
