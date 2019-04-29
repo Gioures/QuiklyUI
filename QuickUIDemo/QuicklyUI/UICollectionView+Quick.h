@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NSInteger(^B)(void);
 
+
 @interface UICollectionView (Quick)
 
 /**
@@ -29,6 +30,11 @@ typedef NSInteger(^B)(void);
 @property (nonatomic, copy) UICollectionView*(^numberOfItemsInSection)(NSInteger (^blc)(NSInteger section));
 
 @property (nonatomic, copy) UICollectionView*(^numberOfSectionsInCollectionView)(B blc);
+
+@property (nonatomic, copy) UICollectionView*(^viewForHeadOrFoot)(UICollectionReusableView * (^blc)(BOOL head,NSIndexPath *indexPath));
+
+@property (nonatomic, copy) UICollectionView*(^didSelectAtIndex)(void(^blc)(NSIndexPath *indexPath));
+
 
 /**
  注册Cell isNib：从xib拉取写YES，其他写NO，cellClass：类名

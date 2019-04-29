@@ -27,7 +27,7 @@
         [wk dismissViewControllerAnimated:YES completion:nil];
     });
     
-    _c = CollectionView(CGRectMake(0, 100,370,667), Layout.itemSizeA(100,100)).regist(YES, ZCollectionViewCell.class).numberOfSectionsInCollectionView(^NSInteger{
+     CollectionView(CGRectMake(0, 100,370,667), Layout.itemSizeA(100,100)).regist(YES, ZCollectionViewCell.class).numberOfSectionsInCollectionView(^NSInteger{
         return 1;
     }).numberOfItemsInSection(^NSInteger(NSInteger section) {
         return 20;
