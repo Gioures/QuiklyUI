@@ -18,7 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.bg(UIColor.whiteColor);
-    
     [self back];
     
  

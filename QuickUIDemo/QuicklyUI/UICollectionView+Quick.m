@@ -13,13 +13,16 @@
 @property (nonatomic, copy) NSInteger (^numberOfItemsInSectionBlock)(NSInteger section);
 @property (nonatomic, copy) UICollectionViewCell* (^cellForItemAtIndexPathBlock)(NSIndexPath *index);
 @property (nonatomic, copy) B numberOfSectionsInCollectionViewBlock;
+@property (nonatomic, copy) UICollectionReusableView * (^headfootBlock)(BOOL head,NSIndexPath *indexPath);
+@property (nonatomic, copy) void(^didselectBlock)(NSIndexPath *indexPath);
 @end
 
 @implementation UICollectionView (Quick)
 @dynamic numberOfItemsInSectionBlock;
 @dynamic cellForItemAtIndexPathBlock;
 @dynamic numberOfSectionsInCollectionViewBlock;
-
+@dynamic headfootBlock;
+@dynamic didselectBlock;
 
 +(UICollectionView * _Nonnull (^)(CGRect frame,UICollectionViewLayout *layout))collectionView{
     return ^(CGRect frame,UICollectionViewLayout *layout){
@@ -79,6 +82,16 @@
         return wk;
     };
     
+    self.viewForHeadOrFoot = ^UICollectionView * _Nonnull(UICollectionReusableView * _Nonnull (^ _Nonnull blc)(BOOL, NSIndexPath * _Nonnull)) {
+        wk.headfootBlock = blc;
+        return wk;
+    };
+    
+    self.didSelectAtIndex = ^UICollectionView * _Nonnull(void (^ _Nonnull blc)(NSIndexPath * _Nonnull)) {
+        wk.didselectBlock = blc;
+        return wk;
+    };
+    
     return self;
     
 }
@@ -87,6 +100,14 @@
 
 
 // MARK: -- 属性
+
+-(void)setDidselectBlock:(void (^)(NSIndexPath *))didselectBlock{
+      objc_setAssociatedObject(self, @selector(didselectBlock), didselectBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+-(void (^)(NSIndexPath *))didselectBlock{
+     return objc_getAssociatedObject(self, @selector(didselectBlock));
+}
 
 -(void)setNumberOfItemsInSectionBlock:(NSInteger (^)(NSInteger))numberOfItemsInSectionBlock{
     objc_setAssociatedObject(self, @selector(numberOfItemsInSectionBlock), numberOfItemsInSectionBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -152,11 +173,37 @@
     return objc_getAssociatedObject(self, @selector(numberOfSectionsInCollectionView));
 }
 
+-(void)setHeadfootBlock:(UICollectionReusableView *(^)(BOOL, NSIndexPath *))headfootBlock{
+    objc_setAssociatedObject(self, @selector(headfootBlock), headfootBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+-(UICollectionReusableView *(^)(BOOL, NSIndexPath *))headfootBlock{
+     return objc_getAssociatedObject(self, @selector(headfootBlock));
+}
+
+-(void)setViewForHeadOrFoot:(UICollectionView * _Nonnull (^)(UICollectionReusableView * _Nonnull (^ _Nonnull)(BOOL, NSIndexPath * _Nonnull)))viewForHeadOrFoot{
+    objc_setAssociatedObject(self, @selector(viewForHeadOrFoot), viewForHeadOrFoot, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+-(UICollectionView * _Nonnull (^)(UICollectionReusableView * _Nonnull (^ _Nonnull)(BOOL, NSIndexPath * _Nonnull)))viewForHeadOrFoot{
+    return objc_getAssociatedObject(self, @selector(viewForHeadOrFoot));
+}
+
+-(void)setDidSelectAtIndex:(UICollectionView * _Nonnull (^)(void (^ _Nonnull)(NSIndexPath * _Nonnull)))didSelectAtIndex{
+    objc_setAssociatedObject(self, @selector(didSelectAtIndex), didSelectAtIndex, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+-(UICollectionView * _Nonnull (^)(void (^ _Nonnull)(NSIndexPath * _Nonnull)))didSelectAtIndex{
+    return objc_getAssociatedObject(self, @selector(didSelectAtIndex));
+}
+
 -(UICollectionView *)delegateA{
     self.delegate = self;
     self.dataSource = self;
     return self;
 }
+
+
 
 #pragma mark 方法
 -(UICollectionView * _Nonnull (^)(UICollectionViewLayout * _Nonnull))layout{
@@ -204,6 +251,26 @@
     return 0;
 }
 
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        if (self.headfootBlock) {
+            return self.headfootBlock(YES,indexPath);
+        }
+    }else{
+        if (self.headfootBlock) {
+            return self.headfootBlock(NO,indexPath);
+        }
+    }
+    return nil;
+}
+
+#pragma mark ------ UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    if (self.didselectBlock) {
+        self.didselectBlock(indexPath);
+    }
+}
 
 
 @end
