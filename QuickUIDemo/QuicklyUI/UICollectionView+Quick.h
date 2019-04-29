@@ -98,8 +98,16 @@ typedef NSInteger(^B)(void);
 
 @interface UICollectionViewFlowLayout (Quick)
 
+
+/**
+ 上下最小距离
+ */
 -  (UICollectionViewFlowLayout*(^)(CGFloat space))minimumLineSpacingA;
 
+
+/**
+ 左右最小距离， flowlayout是平铺，设置了itemSize这个可以不设置
+ */
 - (UICollectionViewFlowLayout*(^)(CGFloat space))minimumInteritemSpacingA;
 
 - (UICollectionViewFlowLayout*(^)(float w,float h))itemSizeA;
