@@ -12,121 +12,32 @@
 
 @interface UITableView (Quick)
 
-@property (nonatomic , copy) UITableView*(^insets)(UIEdgeInsets insets);
+@property (nonatomic, copy)  UITableView*(^insets)(UIEdgeInsets insets);
+@property (nonatomic, copy)  UITableView*(^bottemLineStyle)(UITableViewCellSeparatorStyle style);
+@property (nonatomic, copy)  UITableView*(^bottemLineColor)(UIColor* color);
+@property (nonatomic, copy)  UITableView*(^bottemLineInsets)(UIEdgeInsets insets);
+@property (nonatomic, copy)  UITableView* (^regist)(BOOL fromNib,Class cellClass,NSString* identifier);
+
+@property (nonatomic, strong , readonly)  UITableView* reload;
+@property (nonatomic, strong , readonly)  UITableView* beginload;
+@property (nonatomic, strong , readonly)  UITableView* endload;
+@property (nonatomic, strong , readonly)  UITableView* delegateA;
+
+@property (nonatomic, copy) UITableView* (^numberOfSectionsA)(NSInteger (^blc)(void));
+@property (nonatomic, copy) UITableView* (^numberOfRowsInSectionA)(NSInteger (^blc)(NSInteger section));
+@property (nonatomic, copy) UITableView* (^cell)(UITableViewCell* (^blc)(NSIndexPath*indexPath));
+@property (nonatomic, copy) UITableView* (^heightForRowA)(CGFloat (^blc)(NSIndexPath*indexPath));
+@property (nonatomic, copy) UITableView* (^didSelectRowAtIndexPathA)(void(^blc)(NSIndexPath*indexPath));
+@property (nonatomic, copy) UITableView* (^shouldHighlightRowAtIndexPathA)(BOOL(^blc)(NSIndexPath*indexPath));
+@property (nonatomic, copy) UITableView* (^heightForHeaderInSectionA)(CGFloat(^blc)(NSInteger section));
+@property (nonatomic, copy) UITableView* (^heightForFooterInSectionA)(CGFloat(^blc)(NSInteger section));
+@property (nonatomic, copy) UITableView* (^viewForHeaderInSectionA)(UIView *(^blc)(NSInteger section));
+@property (nonatomic, copy) UITableView* (^viewForFooterInSectionA)(UIView *(^blc)(NSInteger section));
+@property (nonatomic, copy) UITableView* (^canEditRowAtIndexPathA)(BOOL (^blc)(NSIndexPath* indexPath));
+@property (nonatomic, copy) UITableView* (^commitEditingStyleForIndexPathA)( void(^blc)( UITableViewCellEditingStyle style,NSIndexPath* indexPath));
+@property (nonatomic, copy) UITableView* (^editTextForIndexA)(NSString *(^blc)(NSIndexPath* indexPath));
 
 
-/***/
--(UITableView*(^)(UIEdgeInsets insets))insets;
-
--(UITableView*)insetsA:(void(^)(void))inset;
-
--(UITableView*(^)(UITableViewCellSeparatorStyle style))bottemLineStyle;
-
--(UITableView*(^)(UIColor* color))bottemLineColor;
-
--(UITableView*(^)(UIEdgeInsets insets))bottemLineInsets;
-
--(UITableView*(^)(void))reload;
-
--(UITableView*(^)(void))beginReload;
-
--(UITableView*(^)(void))endReload;
-
--(UITableView*(^)(BOOL fromNib,Class cellClass,NSString* identifier))registCell;
-
--(UITableView*(^)(BOOL fromNib,Class cellClass,NSString* identifier))registHead;
-
-
-/**
- 设置section个数
- */
--(UITableView*(^)(NSInteger i))setNumOfSection;
-
-
-
-/**
- 设置cell
- */
--(UITableView*(^)(UITableViewCell*(^)(NSIndexPath *index)))setCellForIndexPath;
-
-
-
-/**
- 设置cell个数
- */
--(UITableView*(^)(NSDictionary<NSNumber *,NSNumber *> * dic))setRowNumInSection;
-
-
-
-/**
- 设置cell高度
- */
--(UITableView*(^)(CGFloat (^)(NSIndexPath*)))setRowHeightForIndex;
-
-
-
-/**
- cell点击事件
- */
--(UITableView*(^)(void(^)(NSIndexPath*)))setSelectActionForIndex;
-
-
-
-/**
- 是否高亮
- */
--(UITableView*(^)(BOOL(^)(NSIndexPath*)))setShouldHighlightRowAtIndex;
-
-
-
-/**
- 设置代理
- */
--(UITableView*(^)(void))setDelegateAndDataSource;
-
-
-
-/**
- 组头高
- */
--(UITableView*(^)(CGFloat(^)(NSInteger)))setSectionHeadHeight;
-
-
-/**
- 组委高
- */
--(UITableView*(^)(CGFloat(^)(NSInteger)))setSectionFootHeight;
-
-
-/**
- 组头View
- */
--(UITableView*(^)(UIView*(^)(NSInteger)))setSectionHeadView;
-
-
-/**
- 组委View
- */
--(UITableView*(^)(UIView*(^)(NSInteger)))setSectionFootView;
-
-
-/**
- 是否可编辑（默认可以？）
- */
--(UITableView*(^)(BOOL(^)(NSIndexPath*)))setCanEditForIndex;
-
-
-/**
- 设置编辑类型
- */
--(UITableView*(^)(void(^)(UITableViewCellEditingStyle,NSIndexPath*)))setCommitEditStyleForIndex;
-
-
-
-/**
- 设置编辑按钮文字
- */
--(UITableView*(^)(NSString*(^)(NSIndexPath*)))setEditTextForIndex;
 
 
 #pragma mark UIView公共方法 不需要实现
