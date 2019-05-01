@@ -5,7 +5,7 @@
 //  Created by 段庆烨 on 2019/4/27.
 //  Copyright © 2019年 段庆烨. All rights reserved.
 //
-
+#define WeakSelf  __weak typeof(self) wk = self;
 #import "UICollectionView+Quick.h"
 #import "objc/runtime.h"
 
@@ -46,8 +46,7 @@
  */
 -(instancetype)initPublicBlockWithFrame:(CGRect)frame collectionViewLayout:(nonnull UICollectionViewLayout *)layout{
     self = [self initPublicBlockWithFrame:frame collectionViewLayout:layout];
-    __weak typeof(self)wk = self;
-    
+    WeakSelf
     self.cellForItemAtIndexPath = ^UICollectionView * _Nonnull(UICollectionViewCell * _Nonnull (^ _Nonnull cell)(NSIndexPath * _Nonnull)) {
         wk.cellForItemAtIndexPathBlock = cell;
         return wk;
